@@ -1,0 +1,17 @@
+{
+  "name": "phbmd",
+  "version": "0.0.1",
+  "description": "Render markdown in style of D&D 5e PHB.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sam@ifdown.net",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "less": "^3.10.3",
+    "log-timestamp": "^0.3.0",
+    "marked": "^0.7.0",
+    "meow": "^6.0.0"
+  }
+}
