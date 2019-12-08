@@ -26,4 +26,10 @@ $ dndmd input.md -o output.html
 $ dndmd input.md -o output.html -w
 ```
 
+## Output
+
+The default output is styled to look like the Player's Handbook.
+
+![Example output](example.png)
+
 See more details in the [examples](./examples) directory.
