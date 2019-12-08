@@ -1,3 +1,7 @@
+#!/usr/bin/env node
+
+"use strict";
+
 const less = require('less'),
     fs = require('fs'),
     meow = require('meow'),
@@ -54,8 +58,8 @@ const h = function(html, css) {
 
 const render = function(inputFile) {
     const inputText = fs.readFileSync(inputFile, 'utf8'),
-        phbLess = fs.readFileSync(path.join(__dirname, './phbstyle/phb.style.less'), 'utf8'),
-        phbmdLess = fs.readFileSync(path.join(__dirname, './phbmd.less'), 'utf8'),
+        phbLess = fs.readFileSync(path.join(__dirname, './static/phbstyle/phb.style.less'), 'utf8'),
+        phbmdLess = fs.readFileSync(path.join(__dirname, './static/phbmd.less'), 'utf8'),
         allLess = phbmdLess + "\n\n" + phbLess;
 
     const css = less.renderSync(allLess, { compress: false, }),
@@ -102,6 +106,10 @@ function main(inputFile, options) {
 
     if (options.watch) {
         require('log-timestamp');
+
+        const rendered = render(inputFile);
+        writeOutput(rendered);
+
         console.log(`watching ${inputFile} for changes...`);
         fs.watchFile(inputFile, function(e, t) {
             console.log(`${inputFile} changed, rerendering...`);

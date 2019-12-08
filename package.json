@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "sam@ifdown.net",
-  "license": "GPL-3.0",
+  "license": "MIT",
+  "bin": {
+      "dndmd": "./cli.js"
+  },
   "dependencies": {
     "less": "^3.10.3",
     "log-timestamp": "^0.3.0",
