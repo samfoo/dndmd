@@ -1,6 +1,6 @@
 {
   "name": "dndmd",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Render markdown in style of D&D 5e",
   "main": "cli.js",
   "scripts": {

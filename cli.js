@@ -62,7 +62,10 @@ const render = function(inputFile) {
         phbmdLess = fs.readFileSync(path.join(__dirname, './static/phbmd.less'), 'utf8'),
         allLess = phbmdLess + "\n\n" + phbLess;
 
-    const css = less.renderSync(allLess, { compress: false, }),
+    const css = less.renderSync(allLess, {
+            compress: false,
+            filename: path.resolve(path.join(__dirname, "./static/phbmd.less"))
+        }),
         pages = pagesList(inputText),
         html = renderPages(pages),
         rendered = h(html, css);
